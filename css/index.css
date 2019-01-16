@@ -1,0 +1,285 @@
+/*------------------------------
+	GENERAL
+------------------------------*/
+
+html {
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* IE fix */
+
+body {
+	display: flex;
+	/* crée un contexte flex pour ses enfants */
+	flex-direction: column;
+	/* affichage vertical */
+	min-height: 100vh;
+	/* toute la hauteur du viewport (compatible IE9+) */
+}
+
+.wrapper {
+	display: block;
+	/* IE fix */
+	flex: 1 1 auto;
+	/* occupe la hauteur restante */
+	display: flex;
+	/* crée un contexte flex pour ses enfants */
+	flex-direction: row;
+	/* affichage horizontal */
+}
+
+.content {
+	display: block;
+	/* IE fix */
+	flex: 1;
+	/* occupe la largeur restante */
+}
+
+.contentswitch {
+	display: block;
+	/* IE fix */
+	flex: 2;
+	/* occupe la largeur restante */
+}
+
+
+/*------------------------------
+	STRUCTURE
+------------------------------*/
+
+/*-------- 1. GENERAL --------*/
+
+body {
+	margin: 0;
+	font-family: "Lato", arial;
+	background-color: #fff;
+	color: #333333;
+	font-size: 1.1em;
+}
+
+main {
+	display: flex;
+}
+
+/*-------- 2. HEADER --------*/
+
+header {
+	display: flex;
+	height: 4.9vh;
+	background-color: #5e8b6f;
+	color: white;
+}
+
+header > img {
+	width: 4em;
+	position: relative;
+	left: 2%;
+}
+
+header > div {
+	position: relative;
+	top: 25%;
+	left: 4%;
+}
+
+/*-------- 3. ASIDE --------*/
+
+aside {
+	width: 25%;
+	height: 90vh;
+	border-bottom-style: solid;
+	border-top-style: solid;
+	border-width: 1.5px;
+	background-color: #ece8d9;
+}
+
+aside p {
+	margin: 0;
+}
+
+/* Select group */
+
+aside > div:first-child {
+	height: 60%;
+	border-bottom-style: solid;
+	border-width: 1.5px;
+	overflow: auto;
+}
+
+/* Create lesson */
+
+aside > div:last-child {
+	position: relative;
+	height: 40%;
+}
+
+/* Tabs */
+
+aside .tabs {
+	border-bottom: solid;
+	border-width: 1.5px;
+}
+
+aside .tabs > div {
+	display: inline;
+}
+
+aside .tabs > div > a {
+	width: 100%;
+	height: 10%;
+	border: solid;
+	border-bottom: none;
+	border-top-left-radius: 1vh;
+	border-top-right-radius: 1vh;
+	border-width: 1.5px;
+}
+
+aside .tabs > div > div {
+	position: absolute;
+	width: 100%;
+	height: 90%;
+	overflow: auto;
+}
+
+aside .tabs > div:not(:target) > div {
+	display: none;
+}
+
+aside .tabs > div:target > div {
+	display: block;
+}
+
+/* Creation lesson */
+
+#lesson > div > form {
+	text-align: right;
+}
+
+#lesson > div > form > p {
+	margin: 1vh;
+}
+
+#lesson > div > div {
+	margin-top: 1vh;
+	text-align: center;
+}
+
+/* table */
+
+aside table {
+	width: 100%;
+}
+
+aside table > tbody > tr > td:last-child {
+	text-align: center;
+}
+
+/*-------- 4. ARTICLE --------*/
+
+article {
+	width: 75%;
+	height: 90vh;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 1.5px;
+	background-color: #fffdf6;
+	display: flex;
+	overflow: auto;
+}
+
+article > div {
+	background-color: fffdf6;
+	border-right-style: solid;
+	border-width: 2px;
+	width: 100%;
+	text-align: center;
+}
+
+article p {
+	margin: 0px;
+}
+
+article a {
+	position: absolute;
+	font-size: xx-small;
+	right: 3px;
+	top: 3px;
+}
+
+/* Hour */
+
+article > div#hour {
+	width: 10%;
+	display: inline-block;
+}
+
+article > div#hour > p {
+	position: relative;
+	top: 2.8vh;
+	font-size: small;
+	border-top: solid;
+	border-width: 1.5px;
+}
+
+article > div#hour > p:not(:last-child) {
+	height: 3.6vh;
+}
+
+/* Day */
+
+article > div:not(#hour) > p {
+	border-bottom: solid;
+	border-width: 1.5px;
+	height: 2.8vh;
+}
+
+article > div > div {
+	display: flex;
+}
+
+article > div > div > div {
+	width: 100%;
+	overflow: hidden;
+}
+
+article > div > div > div:not(:first-child) {
+	border-left-style: solid;
+	border-width: 1.5px;
+}
+
+article span {
+	display: block;
+	height: 1.75vh;
+}
+
+article span:not(:first-child) {
+	margin-top: 1.25px;
+}
+
+article span > div {
+	position: relative;
+	overflow: hidden;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 0.5px;
+}
+
+article span > div > p {
+	position: relative;
+	top: 6px;
+}
+
+/*-------- 5. FOOTER --------*/
+
+footer {
+	height: 4.9vh;
+	background-color: #5e8b6f;
+	color: white;
+	text-align: center;
+}
